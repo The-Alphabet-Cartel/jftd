@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/JFTD-Logo.png" alt="Joint Task Force Draugr Logo" width="200" />
+  <img src="images/JTFD-logo.png" alt="Joint Task Force Draugr Logo" width="200" />
 </p>
 
 # Joint Task Force Draugr — Fluxer Bots
