@@ -33,7 +33,7 @@ services:
   # ===========================================================================
   ratatoskr:
     image: ghcr.io/the-alphabet-cartel/ratatoskr:latest
-    container_name: ratatoskr
+    container_name: jtfd-ratatoskr
     <<: *common
     environment:
       <<: *env
