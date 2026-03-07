@@ -14,6 +14,7 @@ This repo is a submodule of [Bragi](https://github.com/the-alphabet-cartel/bragi
 
 | Bot | Role | Description |
 |-----|------|-------------|
+| [**Frigg**](https://github.com/the-alphabet-cartel/frigg) | Role Picker | Self-service reaction-based role selection for ranks, units, and specialties. Named for the Norse goddess of foresight and keeper of order. |
 | [**Ratatoskr**](https://github.com/the-alphabet-cartel/ratatoskr) | Event Scheduler | Manages operation scheduling and attendance tracking. Named for the Norse squirrel who carried messages between the roots and branches of Yggdrasil. |
 
 All bots follow the architectural patterns defined in the [Bragi Clean Architecture Charter](https://github.com/the-alphabet-cartel/bragi/blob/main/docs/standards/charter.md).
@@ -23,7 +24,8 @@ All bots follow the architectural patterns defined in the [Bragi Clean Architect
 ## Repository Structure
 
 ```
-jftd/
+jtfd/
+├── frigg/                    ← Git submodule → the-alphabet-cartel/frigg
 ├── ratatoskr/                ← Git submodule → the-alphabet-cartel/ratatoskr
 ├── docker-compose.yml        ← JFTD bot stack
 ├── .env.template             ← Environment variable reference
@@ -38,7 +40,7 @@ jftd/
 ### Prerequisites
 
 - **Server:** Debian Linux with Docker Engine 29.x + Compose v5
-- Fluxer bot token for Ratatoskr (see [`secrets/README.md`](secrets/README.md))
+- Fluxer bot tokens for each bot (see [`secrets/README.md`](secrets/README.md))
 
 ### Setup
 
@@ -47,10 +49,11 @@ jftd/
 git submodule update --init --recursive
 
 # 2. Create the Docker network
-docker network create jftd-net
+docker network create jtfd-net
 
 # 3. Create host directories for persistent data
-mkdir -p /opt/bragi/jftd/ratatoskr/{logs,data}
+mkdir -p /opt/bragi/jtfd/frigg/{logs,data}
+mkdir -p /opt/bragi/jtfd/ratatoskr/{logs,data}
 
 # 4. Configure environment
 cp .env.template .env

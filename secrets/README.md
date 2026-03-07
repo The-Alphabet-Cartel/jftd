@@ -6,15 +6,17 @@ This directory holds Docker Secret files for JFTD's bots. These files are **neve
 
 | File | Description | Source |
 |------|-------------|--------|
+| `frigg_fluxer_token` | Fluxer bot token for Frigg | Fluxer Developer Portal |
 | `ratatoskr_fluxer_token` | Fluxer bot token for Ratatoskr | Fluxer Developer Portal |
 
 ---
 
 ## Setup: Fluxer Bot Token
 
-1. Obtain a bot token from the Fluxer Developer Portal for Ratatoskr
-2. Create the secret file:
+1. Obtain bot tokens from the Fluxer Developer Portal for each bot
+2. Create the secret files:
    ```bash
+   printf "YOUR_FRIGG_TOKEN_HERE" > ./secrets/frigg_fluxer_token
    printf "YOUR_RATATOSKR_TOKEN_HERE" > ./secrets/ratatoskr_fluxer_token
    ```
 
@@ -25,6 +27,7 @@ This directory holds Docker Secret files for JFTD's bots. These files are **neve
 After creating the secret file, set permissions:
 
 ```bash
+chmod 600 ./secrets/frigg_fluxer_token
 chmod 600 ./secrets/ratatoskr_fluxer_token
 ```
 
